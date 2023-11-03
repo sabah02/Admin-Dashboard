@@ -2,43 +2,382 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    font-size: 15px;
+    color: #7e8987;
 }
 
 .container {
     width: 100%;
-    height: 100vh;
     display: grid;
     grid-template-columns: [col-first] 1.6fr [col-1] 7fr [col-last];
-    grid-template-rows: [row-first] 0.8fr [row-1] 0.75fr [row-2] 1.10fr [row-3] 6fr [row-4] 1fr [row-last];
+    grid-template-rows: [row-first] 0.5fr [row-1] 0.5fr [row-2] 1fr [row-3] 8fr [row-4] 1fr [row-last];
 }
 
 .sidebar {
     background-color: white;
     color: black;
+    height: 100vh;
     grid-row: row-first / row-last;
     display: grid;
     grid-template-rows: [s-r-first] 1fr [s-r-1] 3fr [s-r-2] 2fr [s-r-3] 5fr [s-r-4] 1.7fr [s-r-last];
+    border-right: 0.5px solid #c8c6d7;;
 }
 
 .header , .level1, .level2, .main, .footer {
     grid-column: col-1 / col-last;
 }
 
+.h-sec1, .h-sec2 {
+    display: flex;
+    padding: 15px;
+    margin: 12px;
+    gap: 15px;
+}
+
+.h-sec1 {
+    width: 50%;
+    justify-content: start;
+    padding: 15px;
+    align-items: center;
+}
+
+.h-sec2 {
+    width: 50%;
+    justify-content: end;
+}
+
+.input {
+    width: 300px;
+    height: 23px;
+    padding: 3px;
+}
+
+.header, .level1, .level2, .main, .footer {
+    color: black;
+}
+
 .header {
-    background-color: aqua;
+    display: flex;
+}
+
+.dropdown, .h-issues, .h-pull {
+    border: 1.6px solid #c8c6d7;
+    border-radius: 10px;
+    padding: 5px;
+    width: 20px;
+    max-height: 20px;
+}
+
+.dropdown {
+    font-size: 20px;
+    text-align: center;
+}
+
+
+.header .acc-logo {
+    width: 40px;
+    height: 40px;
 }
 
 .level1 {
-    background-color: blanchedalmond;
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    border-bottom: 0.5px solid #c8c6d7;
+    padding: 16px;
+    /* margin-left: 25px; */
+}
+
+.functions {
+    display: flex;
+    gap: 7px;
+}
+
+.logo {
+    height: 20px;
+    width: 20px;
 }
 
 .level2 {
-    background-color: brown;
+    background-color: white;
+    display: flex;
+    margin-left: 100px;
+    margin-right: 100px;
+    justify-content: space-between;
+    border-bottom: 0.5px solid #c8c6d7;;
 }
 
-.main {
-    background-color: blueviolet;
+.logo-code {
+    width: 18px;
+    height: 17px;
 }
+
+.level2-1, .level2-2 {
+    display: flex;
+}
+
+.level2-1 {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    width: 50%;
+}
+
+.level2-2 {
+    display: flex;
+    gap: 12px;
+    text-align: center;
+    justify-content: end;
+}
+
+.l2-unpin , .l2-unwatch, .l2-fork, .l2-star {
+    border: 1px solid #c8c6d7;
+    border-radius: 8px;
+    width:fit-content;
+    height: fit-content;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    display: flex;
+    gap: 5px;
+}
+
+.status {
+    border-radius: 30px;
+    border: 1px solid #c8c6d7;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 12px;
+    
+}
+
+.level2-2 {
+    width: 100%;
+    align-items: center;
+}
+
+.level2-2 p {
+    text-align: center;
+    font-size: 14px;
+}
+
+
+.main {
+    margin-left: 100px;
+    margin-right: 100px;
+    background-color: white;
+    display: grid;
+    width: 83.8%;
+    height: 80%;
+    grid-template-columns: [col-start] 4fr [col-1] 1.2fr [col-end];
+    grid-template-rows: [row-start] 0.5fr [row-1] 3fr [row-2] 2fr [row-end];
+    gap: 18px;
+    margin-top: 24px;
+}
+
+.m-header {
+    background-color:white;
+    grid-area: row-start / col-start / row-1 / col-1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.m-header-sec2 div, .choose-branch {
+    border: 1px solid #c8c6d7;
+    border-radius: 8px;
+    width:fit-content;
+    height: fit-content;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.m-code {
+    display: flex;
+    gap: 5px;
+    background-color: darkseagreen;
+}
+
+.branch, .tags {
+    padding: 5px;
+}
+
+.m-header-sec1, .m-header-sec2 {
+    display: flex;
+}
+
+.m-header-sec2 {
+    gap: 8px;
+}
+
+.m-sidebar {
+    grid-area: 1 / 2 / 6 / 3;
+}
+
+.container-box {
+    grid-area: row-1 / col-start / row-2/ col-1;
+    border: 0.5px solid #c8c6d7;
+    border-radius: 8px;
+    display: grid;
+    grid-template-rows: [row-start] 1fr [row-1] 4fr [row-end];
+}
+
+.m-updates {
+    grid-row: row-start / row-1;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 0.5px solid #c8c6d7;
+    align-items: center;
+}
+
+.updates-sec1, .updates-sec2 {
+   display: flex;
+   gap: 10px;
+   align-items: center;
+}
+
+.m-updates p{
+    display: inline;
+}
+
+.u-commits {
+    display: inline;
+}
+
+.file-system {
+    grid-row: row-1 / row-end;
+}
+
+
+.file {
+    grid-area: row-2 / col-start / row-end / col-1;
+    display: grid;
+    grid-template-columns: [col-start] 0.5fr [col-1] 3fr [col-2] 5fr [col-3] 2fr [col-4];
+    /* grid-gap: 10px; Adjust the gap between cells */
+    grid-template-rows: repeat(auto-fit, 1fr);
+    /* justify-items: center; */
+    align-items: center;
+
+  }
+
+.file:not(:last-child) {
+    border-bottom: 0.5px solid #c8c6d7;
+}
+  
+.file-logo {
+    grid-column: col-start / col-1;
+    justify-content: start;
+}
+
+.file-name {
+    grid-column: col-1 / col-2;
+}
+
+.commit-desc {
+    grid-column: col-2 / col-3;
+}
+
+.commit-duration {
+    grid-column: col-3 / col-4;
+}
+
+.file-system img {
+    margin: 11px;
+}
+
+.file-system p{
+    margin: 13px;
+}
+
+.u-username {
+    display: inline;
+}
+
+.s-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.s-item {
+    display: flex;
+    gap: 10px;
+    padding: 5px;
+}
+
+.about {
+    font-weight: 600;
+}
+
+.s-description p{
+    margin-bottom: 12px;
+    font-size: 17px;
+}
+
+.commit-msg {
+    grid-area: 1 / col-2 / 1 / col-3;
+}
+
+.duration {
+    grid-area: 1 / col-3 / 1 / m-main-col-end;
+}
+
+.readme {
+    grid-area: row-2 / col-start / row-end / col-1;
+    border: 0.5px solid #c8c6d7;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.r-heading {
+    margin-bottom: 15px;
+    color: black;
+}
+
+.proj-name {
+    font-size: 24px;
+}
+
+.r-sec2 {
+    margin-left: 42px;
+    margin-right: 42px;
+}
+
+.lang {
+    margin-top: 20px;
+}
+
+.lang-bar {
+    display: flex;
+    gap: 3px;
+}
+
+.lang-bar1 {
+    margin-top: 20px;
+    border: 0.1px solid black;
+    height: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+    width: 30%;
+    background-color: #d1462f;
+}
+
+.lang-bar2 {
+    margin-top: 20px;
+    border: 0.1px solid black;
+    height: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    width: 70%;
+    background-color: #803A80;
+}
+
 
 .footer {
     background-color: chocolate;
@@ -83,18 +422,30 @@
     display: flex;
 }
 
-.home-logo, .issues-logo, .discussions-logo, .codespace-logo, .explore-logo, .marketplace-logo , .acc-logo{
+.logo {
     width: 20px;
     height: 20px;
 }
 
-.pull-logo {
-    width: 20px;
-    height: 17px;
+.logo2 {
+    width: 16px;
+    height: 16px;
 }
 
 .home, .issues, .pull_request, .discussions, .codespace, .explore, .marketplace{
     margin-left: 5px;
+}
+
+.sbox {
+    display: flex;
+    align-items: start;
+    
+}
+
+.box {
+    display: flex;
+    align-items: self-end;
+    
 }
 
 hr {
@@ -105,3 +456,4 @@ hr {
 .sec2, .repository {
     margin-top: -18px;
 }
+
